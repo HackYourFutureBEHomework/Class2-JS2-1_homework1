@@ -25,16 +25,19 @@ https://github.com/HackYourFutureBEHomework/Class2-JS2-1_homework1.git`
 `git clone git@github.com:HackYourFutureBEHomework/Class2-JS2-1_homework1.git`
 
 ### Create branch
-`git checkout -b #branch-name#`
+Create branch with the name of the homework and your name  
+`git checkout -b #firstname-lastname_exercise1#`
 
-### Add file
-`git add index.html`
+### Add your homework
+Create a folder with your name and add your homework to that folder.
+Add future homework for this javascript module to that folder with separate pull requests.  
+`git add *`
 
 ### Check status
 `git status`
 
 ### Commit
-`git commit -m “added file”`
+`git commit -m “added folder #firstname-lastname# with homework #exercise1#”`
 
 ### Push
 `git push`
