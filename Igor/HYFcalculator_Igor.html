@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HYF calculator homework</title>
+  <link 
+    rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+
+<style>
+  .marginauto {
+    margin: auto;
+  }
+  .halfwidth {
+    width: 50%;
+  }
+</style>
+
+<body>
+
+  <div class='marginauto halfwidth'>
+
+    <h1>The Hack Your Future Calculator</h1>
+
+    <form>
+
+      <div class="form-group">
+        <label for="number1">First number</label>
+
+        <!-- we define an element with an id so that we can access it from our javascript -->
+        <input type="text" class="form-control" placeholder="Enter first number" id="number1">
+
+      </div>
+
+      <div class="form-group">
+        <label for="number2">Second number</label>
+
+        <!-- we define another element with another id so that we can also access it from our javascript -->
+        <input type="text" class="form-control" placeholder="Enter second number" id="number2">
+
+      </div>
+
+    </form>
+
+    <button class="btn btn-primary" onclick="multiply()">Multiply</button>
+    <button class="btn btn-primary" onclick="divide()">Divide</button>
+    <button class="btn btn-primary" onclick="add()">Add</button>
+    <button class="btn btn-primary" onclick="subtract()">Subtract</button>
+    <button class="btn btn-primary" onclick="largest()">Largest</button>
+    <button class="btn btn-primary" onclick="closestTo100()">Closest to 100</button>
+
+    <h2>Result:</h2>
+
+    <h3 id="js-result">
+
+      <!-- WRITE THE RESULT HERE -->
+      <!-- hint: use innerHTML -->
+
+    </h3>
+
+  </div>
+
+</body>
+
+<script>
+
+  function multiply() {
+
+    // Here we look inside our HTML document and get the element with ID 'number1'
+    // which is an input field, so we can get its value (what we have typed inside the input field)
+    num1 = document.getElementById('number1').value;
+
+    // We do the same for the second input field
+    num2 = document.getElementById('number2').value;
+
+    // HINT: console.log the values here to see if the above is working
+
+    // we multiply the two values
+    result = num1 * num2;
+
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
+  }
+
+  function divide() {
+    // write your code here
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+    result = num1 / num2;
+    var resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+
+  function add() {
+    // ...
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+    result = num1 + num2;
+    var resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+
+  // OTHER FUNCTIONS COME HERE
+
+function subtract() {
+    // ...
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+    result = num1 - num2;
+    var resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+
+  function largest() {
+    // ...
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+      if (num1 > num2) {
+        result = num1;
+      } result = num2;
+    var resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+
+  function closestTo100() {
+    // ...
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+      let num1ToCheck = Math.abs(Math.abs(num1) - 100); 
+      let num2ToCheck = Math.abs(Math.abs(num2) - 100);
+      console.log(num1ToCheck);
+      console.log(num2ToCheck);
+      if (num1ToCheck > num2ToCheck) {
+        result = (num2 + "- Is closest to 100");
+      } else if (num1ToCheck < num2ToCheck) {
+        result = (num1 + "- Is closest to 100");
+      } else {result = ("They have an equal distance to 100");
+      };
+    var resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+  // GOOD LUCK GUYS!
+
+</script>
+
+</html>
