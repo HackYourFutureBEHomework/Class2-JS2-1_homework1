@@ -42,7 +42,9 @@
         <input type="text" class="form-control" placeholder="Enter second number" id="number2">
 
       </div>
-
+      <!-- alternative way to reset form-->
+      <!--<input type="button" value="Reset Form" onClick="this.form.reset();" /> -->
+    
     </form>
 
     <button class="btn btn-primary" onclick="multiply()">Multiply</button>
@@ -51,6 +53,9 @@
     <button class="btn btn-primary" onclick="subtract()">Subtract</button>
     <button class="btn btn-primary" onclick="largest()">Largest</button>
     <button class="btn btn-primary" onclick="closestTo100()">Closest to 100</button>
+    <!--clear fields with function-->
+    <button class="btn btn-danger" onclick="clearInputFields()">Clear input fields</button> 
+    
 
     <h2>Result:</h2>
 
@@ -59,6 +64,7 @@
       <!-- WRITE THE RESULT HERE -->
       <!-- hint: use innerHTML -->
 
+
     </h3>
 
   </div>
@@ -66,84 +72,91 @@
 </body>
 
 <script>
+  
 
   function multiply() {
 
     // Here we look inside our HTML document and get the element with ID 'number1'
     // which is an input field, so we can get its value (what we have typed inside the input field)
-    num1 = document.getElementById('number1').value;
 
     // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
+    captureElements();
 
     // HINT: console.log the values here to see if the above is working
 
     // we multiply the two values
     result = num1 * num2;
-
+    resultOfFunction();
     // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
+    //var resultElement = document.getElementById('js-result');
     // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
-  }
+    //resultElement.innerHTML = result;
+  };
 
   function divide() {
     // write your code here
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
+    captureElements();
     result = num1 / num2;
-    var resultElement = document.getElementById('js-result');
-    resultElement.innerHTML = result;
-  }
+    resultOfFunction();
+  };
 
   function add() {
     // ...
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
+    captureElements();
     result = num1 + num2;
-    var resultElement = document.getElementById('js-result');
-    resultElement.innerHTML = result;
-  }
+    resultOfFunction();
+  };
 
   // OTHER FUNCTIONS COME HERE
 
 function subtract() {
     // ...
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
+    captureElements();
     result = num1 - num2;
-    var resultElement = document.getElementById('js-result');
-    resultElement.innerHTML = result;
+    resultOfFunction();
   }
 
   function largest() {
     // ...
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
+    captureElements();
       if (num1 > num2) {
         result = num1;
       } result = num2;
-    var resultElement = document.getElementById('js-result');
-    resultElement.innerHTML = result;
-  }
+      resultOfFunction();
+  };
 
   function closestTo100() {
     // ...
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
+    captureElements();
       let num1ToCheck = Math.abs(Math.abs(num1) - 100); 
       let num2ToCheck = Math.abs(Math.abs(num2) - 100);
-      console.log(num1ToCheck);
-      console.log(num2ToCheck);
+    //  console.log(num1ToCheck);
+    // console.log(num2ToCheck);
       if (num1ToCheck > num2ToCheck) {
-        result = (num2 + "- Is closest to 100");
-      } else if (num1ToCheck < num2ToCheck) {
-        result = (num1 + "- Is closest to 100");
-      } else {result = ("They have an equal distance to 100");
+          result = (num2 + "- Is closest to 100");
+         } else if (num1ToCheck < num2ToCheck) {
+             result = (num1 + "- Is closest to 100");
+               } else {result = ("They have an equal distance to 100");
       };
-    var resultElement = document.getElementById('js-result');
-    resultElement.innerHTML = result;
+      resultOfFunction();
+  };
+
+  function captureElements() {
+    num1 = document.getElementById('number1').value;
+    num2 = document.getElementById('number2').value;
+  };
+
+  function resultOfFunction() {
+    document.getElementById('js-result').innerHTML = result;
+  };
+
+  function clearInputFields() {
+  document.getElementById("number1").value = "";
+  document.getElementById("number2").value = "";
+  document.getElementById('js-result').innerHTML = "";
   }
+
+
   // GOOD LUCK GUYS!
 
 </script>
