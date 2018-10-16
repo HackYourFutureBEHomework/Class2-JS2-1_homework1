@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HYF calculator homework</title>
   <link 
-    rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
-    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+  integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 </head>
 
 <style>
@@ -20,6 +20,8 @@
 </style>
 
 <body>
+
+      
 
   <div class='marginauto halfwidth'>
 
@@ -44,15 +46,19 @@
       </div>
       <!-- alternative way to reset form-->
       <!--<input type="button" value="Reset Form" onClick="this.form.reset();" /> -->
+      <!-- <script>
+      num1 = (document.getElementById('number1').value)*1;
+      num2 = (document.getElementById('number2').value)*1;
+      </script> -->
     
-    </form>
+  </form>
 
-    <button class="btn btn-primary" onclick="multiply()">Multiply</button>
-    <button class="btn btn-primary" onclick="divide()">Divide</button>
-    <button class="btn btn-primary" onclick="add()">Add</button>
-    <button class="btn btn-primary" onclick="subtract()">Subtract</button>
-    <button class="btn btn-primary" onclick="largest()">Largest</button>
-    <button class="btn btn-primary" onclick="closestTo100()">Closest to 100</button>
+    <button class="btn btn-primary" onclick="multiply(document.getElementById('number1').value,document.getElementById('number2').value)">Multiply</button>
+    <button class="btn btn-primary" onclick="divide(document.getElementById('number1').value,document.getElementById('number2').value)">Divide</button>
+    <button class="btn btn-primary" onclick="add(document.getElementById('number1').value,document.getElementById('number2').value)">Add</button>
+    <button class="btn btn-primary" onclick="subtract(document.getElementById('number1').value,document.getElementById('number2').value)">Subtract</button>
+    <button class="btn btn-primary" onclick="largest(document.getElementById('number1').value,document.getElementById('number2').value)">Largest</button>
+    <button class="btn btn-primary" onclick="closestTo100(document.getElementById('number1').value,document.getElementById('number2').value)">Closest to 100</button>
     <!--clear fields with function-->
     <button class="btn btn-danger" onclick="clearInputFields()">Clear input fields</button> 
     
@@ -63,102 +69,113 @@
 
       <!-- WRITE THE RESULT HERE -->
       <!-- hint: use innerHTML -->
+    <h2>Result with Object:</h2>
 
+    <h3 id="js-result-new">
 
     </h3>
 
   </div>
 
 </body>
-
 <script>
+
+
+
+    function multiply(num1, num2) {
+      let result =  num1 * num2;
+      return resultOfFunction(result);
+    };
+
+    function divide(num1, num2) {
+      let result = num1 / num2;
+      return resultOfFunction(result);
+    };
+  
+    function add(num1, num2) {
+      // ...
+      let result = (num1*1) + (num2*1);
+      return resultOfFunction(result);
+    };
+  
+    // OTHER FUNCTIONS COME HERE
+  
+    function subtract(num1, num2) {
+      // ...
+      let result = num1 - num2;
+      return resultOfFunction(result);
+    }
+  
+    function largest(num1, num2) {
+      // ...
+        if ((num1*1) > (num2*1)) {
+         let result = num2;
+        } result = num1;
+        return resultOfFunction(result);
+    };
+  
+    function closestTo100(num1, num2) {
+      // ...
+        let num1ToCheck = Math.abs(Math.abs(num1) - 100); 
+        let num2ToCheck = Math.abs(Math.abs(num2) - 100);
+        if (num1ToCheck > num2ToCheck) {
+            let result = (num2 + "- Is closest to 100");
+           } else if (num1ToCheck < num2ToCheck) {
+               result = (num1 + "- Is closest to 100");
+                 } else {result = ("They have an equal distance to 100");
+        };
+        return resultOfFunction(result);
+    };
+  
+    function resultOfFunction(result) {
+    document.getElementById('js-result').innerHTML = result;
+    };
+  
+    function clearInputFields() {
+    document.getElementById("number1").value = "";
+    document.getElementById("number2").value = "";
+    document.getElementById('js-result').innerHTML = "";
+    }
   
 
-  function multiply() {
 
-    // Here we look inside our HTML document and get the element with ID 'number1'
-    // which is an input field, so we can get its value (what we have typed inside the input field)
+    // GOOD LUCK GUYS!
+// same working with Object to try constructor
+// function Calculations(multiply, divide, add, subtract, largest, closestTo100, clearInputFields) {
 
-    // We do the same for the second input field
-    captureElements();
+//   this.multiply = function(num1, num2) {
+//     return document.getElementById('js-result-new').innerHTML = (num1 * num2);
+//     //return alert(num1 * num2);
+//   };
+//   this.divide = function(num1, num2) {
+//     return alert(num1 / num2);
+//   };
+//   this.add = function(num1, num2) {
+//     return num1 + num2;
+//   };;
+//   this.subtract = function(num1, num2) {
+//     return num1 - num2;
+//   };;
+//   this.largest = function(num1, num2) {
+//     let result;
+//     if (num1 > num2) {
+//           result = num1;
+//         } result = num2;
+//   };
+//   this.closestTo100 = function(num1, num2) {
+//     let num1ToCheck = Math.abs(Math.abs(num1) - 100); 
+//     let num2ToCheck = Math.abs(Math.abs(num2) - 100);
+//     let result;
+//         if (num1ToCheck > num2ToCheck) {
+//             result = (num2 + "- Is closest to 100");
+//            } else if (num1ToCheck < num2ToCheck) {
+//                result = (num1 + "- Is closest to 100");
+//                  } else {result = ("They have an equal distance to 100");
+//           };
+//   }
+// }
+// Calculations();
 
-    // HINT: console.log the values here to see if the above is working
-
-    // we multiply the two values
-    result = num1 * num2;
-    resultOfFunction();
-    // We select the element where we want to write the result
-    //var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    //resultElement.innerHTML = result;
-  };
-
-  function divide() {
-    // write your code here
-    captureElements();
-    result = num1 / num2;
-    resultOfFunction();
-  };
-
-  function add() {
-    // ...
-    captureElements();
-    result = num1 + num2;
-    resultOfFunction();
-  };
-
-  // OTHER FUNCTIONS COME HERE
-
-function subtract() {
-    // ...
-    captureElements();
-    result = num1 - num2;
-    resultOfFunction();
-  }
-
-  function largest() {
-    // ...
-    captureElements();
-      if (num1 > num2) {
-        result = num1;
-      } result = num2;
-      resultOfFunction();
-  };
-
-  function closestTo100() {
-    // ...
-    captureElements();
-      let num1ToCheck = Math.abs(Math.abs(num1) - 100); 
-      let num2ToCheck = Math.abs(Math.abs(num2) - 100);
-    //  console.log(num1ToCheck);
-    // console.log(num2ToCheck);
-      if (num1ToCheck > num2ToCheck) {
-          result = (num2 + "- Is closest to 100");
-         } else if (num1ToCheck < num2ToCheck) {
-             result = (num1 + "- Is closest to 100");
-               } else {result = ("They have an equal distance to 100");
-      };
-      resultOfFunction();
-  };
-
-  function captureElements() {
-    num1 = document.getElementById('number1').value;
-    num2 = document.getElementById('number2').value;
-  };
-
-  function resultOfFunction() {
-    document.getElementById('js-result').innerHTML = result;
-  };
-
-  function clearInputFields() {
-  document.getElementById("number1").value = "";
-  document.getElementById("number2").value = "";
-  document.getElementById('js-result').innerHTML = "";
-  }
-
-
-  // GOOD LUCK GUYS!
-
-</script>
+  </script>
 
 </html>
