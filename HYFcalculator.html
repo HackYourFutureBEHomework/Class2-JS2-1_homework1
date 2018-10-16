@@ -55,10 +55,10 @@
     <h2>Result:</h2>
 
     <h3 id="js-result">
-
-      <!-- WRITE THE RESULT HERE -->
-      <!-- hint: use innerHTML -->
-
+ 
+        <!-- WRITE THE RESULT HERE -->
+        <!-- hint: use innerHTML -->
+        
     </h3>
 
   </div>
@@ -66,9 +66,9 @@
 </body>
 
 <script>
+  var num1 , num2;
 
-  function multiply() {
-
+  function getNumbers(number1, number2) {
     // Here we look inside our HTML document and get the element with ID 'number1'
     // which is an input field, so we can get its value (what we have typed inside the input field)
     num1 = document.getElementById('number1').value;
@@ -76,28 +76,117 @@
     // We do the same for the second input field
     num2 = document.getElementById('number2').value;
 
-    // HINT: console.log the values here to see if the above is working
+  }
 
-    // we multiply the two values
-    result = num1 * num2;
-
+  function setResult(result) { 
     // We select the element where we want to write the result
     var resultElement = document.getElementById('js-result');
     // we write the result inside the HTML of the element
     resultElement.innerHTML = result;
+
+  }
+
+  function multiply() {
+    // we multiply the two values
+    getNumbers(num1,num2);
+
+    result = num1 * num2;
+    
+    setResult(result);
+
   }
 
   function divide() {
-    // write your code here
-  }
+    // we divide the two values
+    getNumbers(num1,num2);
+
+    result = (num1 / num2);
+
+    setResult(result);
+
+  }   
 
   function add() {
-    // ...
+    // we add the two values
+    //result = (+num1 + +num2);
+    getNumbers(num1,num2);
+
+    result1 = parseInt(num1, 10);
+    result2 = parseInt(num2, 10);
+
+    result = result1 + result2;
+
+    setResult(result);
+
+  }  
+
+  function subtract() {
+    // we subtract the two values
+    getNumbers(num1,num2);
+
+    result1 = parseInt(num1, 10);
+    result2 = parseInt(num2, 10);
+
+    // HINT: console.log the values here to see if the above is working
+    console.log(result1);
+    console.log(result2);
+
+    result = (num1) - (num2);
+
+    setResult(result);
+
+  } 
+
+  // function is to find the largest number 
+
+  function largest() {
+
+    getNumbers(num1,num2);
+
+    // HINT: console.log the values here to see if the above is working
+    console.log(num1);
+    console.log(num2);
+
+    //largest the two values
+    if (num1 != num2){
+    var result = num1 > num2 ? num1: num2;
+    
+    }else result = "both numbers are same";
+    
+    //console.log(result);
+  
+    setResult(result);
+
+  } 
+
+  // this function is used to get the closest number to 100
+
+  function closestTo100() {
+    
+    getNumbers(num1,num2);
+    // HINT: console.log the values here to see if the above is working
+    //console.log(num1);
+    //console.log(num2);
+
+    if(num1==num2){
+
+      return result = "both numbers are same";
+    
+    } else {
+      number_check1 = 100 - num1;
+      number_check2 = 100 - num2;
+
+      console.log(number_check1);
+      console.log(number_check2);
+
+    result = Math.max(num1, num2);
+    
+    }
+    //console.log(result);
+
+    setResult(result);
+
   }
-
-  // OTHER FUNCTIONS COME HERE
-
-  // GOOD LUCK GUYS!
 
 </script>
 
