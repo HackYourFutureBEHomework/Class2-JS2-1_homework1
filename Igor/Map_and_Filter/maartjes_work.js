@@ -58,10 +58,9 @@ let moreThan2Hours = durationInMinutes.filter((minHours) => {
 let amountPerTask = moreThan2Hours.map((time) => {
   return time * perHourRate;
 }) 
-
- amountPerTask.forEach(function(itemInArray) {
-   return earnedTotal += itemInArray;
- }) 
+amountPerTask.forEach((itemInArray) => {
+  return earnedTotal += itemInArray;
+})
 
 let earnedTotalEur = earnedTotal.toLocaleString("en-RUR", {
   style: "currency",
