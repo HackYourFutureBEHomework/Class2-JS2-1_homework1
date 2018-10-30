@@ -55,10 +55,6 @@
     <h2>Result:</h2>
 
     <h3 id="js-result">
-
-      <!-- WRITE THE RESULT HERE -->
-      <!-- hint: use innerHTML -->
-
     </h3>
 
   </div>
@@ -66,94 +62,62 @@
 </body>
 
 <script>
+  function setResult(result) {
+    let resultElement = document.getElementById('js-result');
+    resultElement.innerHTML = result;
+  }
+
+  function getNumbers() {
+    return {
+      num1: +document.getElementById('number1').value,
+      num2: +document.getElementById('number2').value,
+    }
+  }
+
   function multiply() {
-    // Here we look inside our HTML document and get the element with ID 'number1'
-    // which is an input field, so we can get its value (what we have typed inside the input field)
-    num1 = document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
+    let {num1, num2} = getNumbers();
     result = num1 * num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    setResult(result);
   }
+
   function divide() {
-    num1 = document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
-    result = num1 / num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    let {num1, num2} = getNumbers();
+    setResult(num1 / num2);
   }
+
   function add() {
-    num1 = document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
-    result = +num1 + +num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    let {num1, num2} = getNumbers();
+    setResult(num1 + num2);
   }
+
   function subtract() {
-    num1 = document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
-    result = num1 - num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    let {num1, num2} = getNumbers();
+    setResult(num1 - num2);
   }
 
 
   function largest() {
-    num1 = +document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = +document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
-    result = num1 + num2;
+    let {num1, num2} = getNumbers();
     if (num1 == num2)
       result = "The numbers are the same";
     else if (num1 > num2)
       result = num1;
-    else result = num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    else
+      result = num2;
+    setResult(result);
   }
 
-
   function closestTo100() {
-    num1 = document.getElementById('number1').value;
-    // We do the same for the second input field
-    num2 = document.getElementById('number2').value;
-    // HINT: console.log the values here to see if the above is working
-    // we multiply the two values
+    let {num1, num2} = getNumbers();
     if (num1 == num2)
       result = "The numbers are the same";
     else if (Math.abs(num1 - 100) == Math.abs(num2 - 100))
       result = "The numbers are at the same distance";
     else if (Math.abs(num1 - 100) < Math.abs(num2 - 100))
       result = num1;
-    else result = num2;
-    // We select the element where we want to write the result
-    var resultElement = document.getElementById('js-result');
-    // we write the result inside the HTML of the element
-    resultElement.innerHTML = result;
+    else
+      result = num2;
+    setResult(result);
   }
 </script>
 
