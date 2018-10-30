@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>HYF calculator homework</title>
-  <link 
-    rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
-    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+    crossorigin="anonymous">
 </head>
 
 <style>
@@ -81,13 +81,80 @@
     resultElement.innerHTML = result;
   }
   function divide() {
-    // write your code here
+    num1 = document.getElementById('number1').value;
+    // We do the same for the second input field
+    num2 = document.getElementById('number2').value;
+    // HINT: console.log the values here to see if the above is working
+    // we multiply the two values
+    result = num1 / num2;
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
   }
   function add() {
-    // ...
+    num1 = document.getElementById('number1').value;
+    // We do the same for the second input field
+    num2 = document.getElementById('number2').value;
+    // HINT: console.log the values here to see if the above is working
+    // we multiply the two values
+    result = +num1 + +num2;
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
   }
-  // OTHER FUNCTIONS COME HERE
-  // GOOD LUCK GUYS!
+  function subtract() {
+    num1 = document.getElementById('number1').value;
+    // We do the same for the second input field
+    num2 = document.getElementById('number2').value;
+    // HINT: console.log the values here to see if the above is working
+    // we multiply the two values
+    result = num1 - num2;
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
+  }
+
+
+  function largest() {
+    num1 = +document.getElementById('number1').value;
+    // We do the same for the second input field
+    num2 = +document.getElementById('number2').value;
+    // HINT: console.log the values here to see if the above is working
+    // we multiply the two values
+    result = num1 + num2;
+    if (num1 == num2)
+      result = "The numbers are the same";
+    else if (num1 > num2)
+      result = num1;
+    else result = num2;
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
+  }
+
+
+  function closestTo100() {
+    num1 = document.getElementById('number1').value;
+    // We do the same for the second input field
+    num2 = document.getElementById('number2').value;
+    // HINT: console.log the values here to see if the above is working
+    // we multiply the two values
+    if (num1 == num2)
+      result = "The numbers are the same";
+    else if (Math.abs(num1 - 100) == Math.abs(num2 - 100))
+      result = "The numbers are at the same distance";
+    else if (Math.abs(num1 - 100) < Math.abs(num2 - 100))
+      result = num1;
+    else result = num2;
+    // We select the element where we want to write the result
+    var resultElement = document.getElementById('js-result');
+    // we write the result inside the HTML of the element
+    resultElement.innerHTML = result;
+  }
 </script>
 
 </html>
