@@ -88,6 +88,11 @@
     resultElement.innerHTML = result;
   }
 
+
+ // OTHER FUNCTIONS COME HERE
+
+  // GOOD LUCK GUYS!
+
   function divide() {
     // write your code here
     num1 = document.getElementById('number1').value;
@@ -108,7 +113,7 @@
       resultElement.innerHTML = result;
   }
 
-  function subtract() {
+  function subtract() { 
       // write your code here
       num1 = document.getElementById('number1').value;
       num2 = document.getElementById('number2').value;
@@ -117,20 +122,36 @@
       resultElement.innerHTML = result;
   }
 
-  function Mathmax() {
+  function largest() {
       // write your code here
-      var num = (num1, num2)
       num1 = document.getElementById('number1').value;
       num2 = document.getElementById('number2').value;
-      // we use the method consisting in simulating a Max Method on Arrays
-      // as it is possible to find the largest number (in a list of numbers) using the Math.max() method
-      result = Mathmax(num1, num2);
+      // we use the method consisting in calling the Math.max function as Math.max() function returns the largest of zero or more numbers => writting Math.max() has stopped all the previous calculation !!!!!
+      //another mistake that I did at the beginning was to use function 'Math.max()' which is totally wrong and then  to use 'Mathmax()' instead of function 'largest()' because the onclick button says largest() not Mathmax()
+      result = Math.max(num1, num2);
+      //here we call the Math method called max on a const num1, num2 etc
       var resultElement = document.getElementById('js-result');
       resultElement.innerHTML = result;
   }
-  // OTHER FUNCTIONS COME HERE
+ 
+  function closestTo100() { 
+      // write your code here
+      num1 = document.getElementById('number1').value;
+      num2 = document.getElementById('number2').value;
+      num3 = 100;
 
-  // GOOD LUCK GUYS!
+      //I have wrote the code but only for 2 numbers num1 and num2, I find it difficult to put the code
+      //for more than 3 numbers. Therefore can I have a hint? Many thanks!
+      if (Math.abs(num1-100)< Math.abs(num2-100)) {
+        result = num1
+        } else {
+          result = num2
+        }
+      var resultElement = document.getElementById('js-result');
+      resultElement.innerHTML = result   
+     
+  }
+
 
 </script>
 
