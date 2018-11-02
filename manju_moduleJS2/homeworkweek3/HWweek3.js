@@ -66,7 +66,7 @@ console.log(threeFive (10,5, 3,5));
 //3.3 Please solve this problem: "https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string"//#endregion
 //3.3.1: with a for loop.
 
-/*function repeatStringNumTimes(str, num) {
+function repeatStringNumTimes(str, num) {
 
   var repeatedString = ""
   for (let i = 0; i < num; i++){
@@ -192,4 +192,4 @@ for (let i = 0; i < len; i++){
        newarr.push(arr[i]);
    }
 }
-console.log('new array after removing duplicates' +newarr);*/
+console.log('new array after removing duplicates' +newarr);
