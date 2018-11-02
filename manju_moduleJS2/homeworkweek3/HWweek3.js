@@ -13,37 +13,60 @@ function bar() {
   foo(bar);
 
 
-/*//3.2 write a function that takes 4 arguments.
+//3.2 write a function that takes 4 arguments.
 
-function sayThree() {
-    number = 3;
-  return number
-};
-function sayFive() {
-    number = 5;
-  return number
-};
-function threeFive(startValue, stopValue, threeCallback, fiveCallback) {
-  const values = [];
-    for (let i = startValue; i <= stopValue; i++ ) {
-      values.push[i];
-    }
-    values.forEach(function(number) {
-    if(number % 3 === 0 ) {
-      sayThree();
-      }
-      if(number % 5 === 0 ) {
-      sayFive();
-    }
+function array_range(startIndex, stopIndex) {
+  let arr = [];
+  
+for (let i = 0; i < stopIndex; i++) 
+  {
+      arr[i] = startIndex;
+      startIndex++;
   }
-)};
-console.log(threeFive(10, 20, sayThree, sayFive));*/
+  console.log(arr);
+  return arr;
+}
+
+function threeFive(startIndex, stopIndex,threeCallback,fiveCallback){
+
+let array = array_range(startIndex, stopIndex);
+let element_divisible_three = [];
+let element_divisible_five = [];
+let x = 0;
+let y = 0;
+let i = 0;
+let len = array.length;
+
+for (let i = 0; i <= len; i++){
+
+   if (array[i] % threeCallback == 0){
+       
+      element_divisible_three[x] = array[i]; 
+      x++;
+   }
+   i++;
+ }
+
+  if (array[i] % fiveCallback == 0){
+
+      element_divisible_five[y] = array[i];
+      console.log(element_divisible_five);
+      x++;
+  }
+
+  return element_divisible_three;
+  return element_divisible_five;
+  console.log(element_divisible_three);
+  console.log(element_divisible_three);
+}
+
+console.log(threeFive (10,5, 3,5));
 
 
 //3.3 Please solve this problem: "https://www.freecodecamp.com/challenges/repeat-a-string-repeat-a-string"//#endregion
 //3.3.1: with a for loop.
 
-function repeatStringNumTimes(str, num) {
+/*function repeatStringNumTimes(str, num) {
 
   var repeatedString = ""
   for (let i = 0; i < num; i++){
@@ -155,7 +178,7 @@ function addSix(n) {
   }
 }
 
-var add = addSix(15)
+let add = addSix(15)
 add(10);
 
 //Bonus: Write a function takes this array ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c'] and returns an array which only has unique values in it (so it removes the duplicate ones). Make it a 'smart' algorithm that could do it for every array (only strings/number). Try to make it as fast as possible!
@@ -169,4 +192,4 @@ for (let i = 0; i < len; i++){
        newarr.push(arr[i]);
    }
 }
-console.log('new array after removing duplicates' +newarr);
+console.log('new array after removing duplicates' +newarr);*/
