@@ -13,26 +13,35 @@ weather(country);
 
 //3.2 You must write a function that takes 4 arguments.
 
-function sayThree() {
-  return number
+function sayThree(number) {
+  console.log(number + " is divisible by 3") 
 };
 
-function sayFive() {
-  return number
+function sayFive(number) {
+  console.log(number + " is divisible by 5")  
 };
 
-function threeFive(startValue, stopValue, threeCallback, fiveCallback) {
+function bothPass(number) {
+  console.log(number + " is divisible by 3 and 5")
+};
+
+function threeFive(startIndex, stopIndex, threeCallback, fiveCallback) {
   const values = [];
-    for (let i = startValue; i <= stopValue; i++ ) {
-      values.push[i];
+    for (let i = 0; i = (stopIndex - startIndex); i++) {
+      values.push(startIndex)
+      startIndex++
     }
     values.forEach(function(number) {
-    if(number % 3 === 0 ) {
-      sayThree();
-      }
-      if(number % 5 === 0 ) {
-      sayFive();
+    if ((number % 3 === 0) && (number % 5 === 0)) {
+      bothPass(number);
+    } else {
+    if (number % 3 === 0 ) {
+      threeCallback(number);
     }
+    if (number % 5 === 0 ) {
+        fiveCallback(number);
+    }
+  }
   }
 )};
 
